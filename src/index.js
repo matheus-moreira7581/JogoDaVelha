@@ -2,15 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './style.css'
-//import App from './App';
 
-/* function Quadrado(props) {
-  return (
-    <button className="quadrado" onClick={props.onClick}>
-      {props.value}
-    </button>
-  );
-} */
 
 class Quadrado extends React.Component {
   constructor(props) {
@@ -61,18 +53,7 @@ class Tabuleiro extends React.Component {
       default:
         status = "Jogador: " + (this.state.xIsNext ? 'X' : 'O');
     }
-    // if (calculateWinner (this.state.quadrados)) {
-    //   status = "Vencendor: " + (!this.state.xIsNext ? 'X' : 'O');
-    //   if(this.state.gameEnded === false) {
-    //     this.setState({gameEnded: true});
-    //   }
-    // }
-    // else if (calculateWinner(this.state.quadrados) === 'velha'){
-    //   status = "Deu Velha";
-    // }
-    // else {
-    //    status = "Jogador: " + (this.state.xIsNext ? 'X' : 'O');
-    // }
+
     return (
       <div>
         <div className="status">{status}</div>
@@ -165,10 +146,6 @@ class Jogo extends React.Component {
     );
   }
 }
-
-// function resetBoard(squares) {
-//   return squares.fill(null);
-// }
 function checkNextPlay(squares,player) {
   if (player === true) player = 'X';
   else player = 'O';
@@ -227,27 +204,4 @@ ReactDOM.render(
   <Jogo />,
   document.getElementById("root")
 );
-
-/* ReactDOM.render(
-  <Tabuleiro
-    quadrados={Array(9).fill().map((value, pos) => pos)} 
-  />,
-  document.getElementById("root")
-); */
-
-/* ReactDOM.render(
-  <Quadrado 
-    onClick={() => {
-      alert('quadrado clicado');
-    }}
-    value="X"
-    />,
-  document.getElementById("root")
-); */
-
-
-
-
-
-//ReactDOM.render(<App />, document.getElementById('root'));
 
